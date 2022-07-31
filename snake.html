@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hieu Nguyen</title>
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+    <div class="header">
+
+        <div class="containTable">
+            <table class="table1">
+                <tbody>
+                    <tr >
+                        <th class="table1-th" colspan="2"> GAME  SNAKE</th>
+                    </tr>
+                    <tr class="table1-tr">
+                        <td class="nameTag">Chế độ</td>
+                        <td>
+                            <button id="dark" onclick="darkMode()">Nền đen</button>
+                            <button id="light" class='click' onclick="lightMode()">Nền nâu</button>
+                        </td>
+                    </tr>
+                    <tr class="table1-tr">
+                        <td class="nameTag">Kiểu chơi</td>
+                        <td>
+                            <button id="boxMode" onclick="playMode1()">Viền</button>
+                            <button id="noBoxMode" class='click' onclick="playMode2()">Không viền</button>
+                        </td>
+                    </tr>
+                    <tr class="table1-tr">
+                        <td class="nameTag">Cấp độ</td>
+                        <td>
+                            <button id="easy" class='click' onclick="easyMode()">Dễ</button>
+                            <button id="medium" onclick="mediumMode()">Trung bình</button>
+                            <button id="hard" onclick="hardMode()">Khó</button>
+                            <button id="veryHard" onclick="veryHardMode()">Rất Khó</button>
+                        </td>
+                    </tr>
+                    <tr class="table1-tr">
+                        <td class="nameTag">Map</td>
+                        <td>
+                            <button id='map1' onclick="map1Mode()" class='click'>1</button>
+                            <button id='map2' onclick="map2Mode()" >2</button>
+                            <button id='map3' onclick="map3Mode()" >3</button>
+                            <button id='map4' onclick="map4Mode()" >4</button>
+                        </td>
+                    </tr>
+                    <tr class="table1-tr">
+                        <td class="highScores">High Scores</td>
+                        <td id="newScore" class="highScores"> 0 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="containTable2"></div>
+        <canvas id="gameSnake" width="500" height="500"></canvas>
+    </div>
+    <script src="snake.js"></script>
+</body>
+</html>

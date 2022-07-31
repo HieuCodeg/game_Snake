@@ -1,0 +1,138 @@
+/* Canvas */
+canvas {
+    position: relative;
+    box-shadow: #100108 20px 20px 40px;
+    margin-top: 15vh;
+    margin-left: 32vw;
+}
+
+.gameOver {
+    border: 5px solid red;
+    box-shadow: red 20px 10px 50px;
+}
+
+.bold {
+    border: 3px solid white;
+}
+.click {
+    border: 2px solid white;
+}
+.header {
+    width: 100%;
+    height: 97vh;
+    background-image:url(photo.jpg);
+}
+
+/* Bảng menu */
+.containTable {
+    position:relative;
+}
+table, td {
+    border: 1px solid #821f02;
+    border-collapse: collapse;
+}
+button + button {
+    margin-bottom: 10px;
+}
+button:hover {
+    opacity: 0.8;
+}
+.table1 {
+    position:absolute;
+    width: 350px;
+    border: 2px solid #821f02;
+    left: 3vw;
+    top: 18vh;
+}
+.table1-th {
+height: 35px;
+background-color: #2f0c0a;
+color: #d2b088;
+font-size: large;
+}
+.table1-tr {
+background-color: #100108;
+}
+tr:hover {
+background-color: #c0834f;
+}
+button {
+background-color: #d99101;
+padding: 6px;
+border-radius: 20px;
+width: 100px;
+font-size:medium;
+cursor: pointer;
+color:#2f0c0a;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+transition: opacity 0.2 ease;
+}
+button:hover {
+    background-color: #821f02;
+    color: #f9e5ad;
+}
+td {
+padding: 10px;
+}
+.highScores {
+background-color: #821f02;
+color: #f9e5ad;
+border: 1px solid #e34514;
+font-size: large;
+text-align: center;
+}
+.nameTag {
+    width: 90px;
+    color: #f9e5ad;
+    font-size: large;
+}
+/* manu */
+.containTable2 {
+    position: absolute;
+    width: 350px;
+    left: 73vw;
+    top: 20vh;
+}
+.table2-tr {
+    background-color: #fee1a9;
+    color: #100108;
+    cursor: pointer;
+}
+.table2-th {
+    background-color: #821f02;
+    height: 35px;
+    color: #f9e5ad;
+}
+.table2-tr1 {
+    background-color: #1e0508;
+    color: #f9e5ad;
+    text-align: center;
+}
+.table2-trlast {
+    background-color: #821f02;
+    text-align: center;
+}
+.table2-tr:hover {
+    background-color: #e19200;
+}
+.d-none {
+    display: none;
+}
+input {
+    width: 95%;
+    height: 25px;;
+}
+.table2-stt {
+    width: 10px;
+}
+.table2-name {
+    width: 200px;
+}
+.checked {
+    background-color: #e1880c;
+}
+.btnMenu {
+    border:1px solid #f9e5ad;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

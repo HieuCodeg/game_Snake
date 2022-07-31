@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td {
+            border: 1px solid #821f02;
+            border-collapse: collapse;
+            color: #d49201;
+            
+        }
+        button + button {
+            margin-bottom: 10px;;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        table {
+            width: 300px;
+            border: 2px solid #821f02;
+       }
+       th {
+        height: 35px;
+        background-color: #2f0c0a;
+        color: #d2b088;
+       }
+       tr {
+        background-color: #100108;
+       }
+       tr:hover {
+        background-color: #381e07;
+       }
+       button {
+        background-color: #d99101;
+        padding: 5px;
+        border-radius: 5px;
+        width: 90px;
+        cursor: pointer;
+        transition: opacity 0.2 ease;
+       }
+       td {
+        padding: 10px;
+       }
+       .highScores {
+        background-color: #821f02;
+        color: #f9e5ad;
+        border: 1px solid #e34514;
+       }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="2"> GAME  SNAKE</th>
+            </tr>
+            <tr>
+                <td>Chế độ</td>
+                <td>
+                    <button>Tối</button>
+                    <button>Sáng</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Kiểu chơi</td>
+                <td>
+                    <button>Viền</button>
+                    <button>Không viền</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Cấp độ</td>
+                <td>
+                    <button>Dễ</button>
+                    <button>Trung bình</button>
+                    <button>Khó</button>
+                    <button>Rất Khó</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Map</td>
+                <td>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="highScores">High Scores</td>
+                <td class="highScores"> 100 </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
