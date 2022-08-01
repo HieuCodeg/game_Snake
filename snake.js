@@ -536,19 +536,14 @@ function checkCollision() {
         yFood = Math.floor(Math.random() * sizeBoard);
 
         for (let i = 0; i < wall.length ; i++) {
-            let part = wall[i];
+            let part = wall2[i];
             if (xFood == part.x && yFood == part.y) {
-                yFood +=1;
+                xFood ++;
+                yFood ++;
                 break;
             }
         }
-        for (let i = 0; i < wall1.length ; i++) {
-            let part = wall1[i];
-            if (xFood == part.x && yFood == part.y) {
-                xFood +=1;
-                break;
-            }
-        }
+
     }
     
 }
