@@ -19,6 +19,7 @@ var map2 = false;
 var map3 = false;
 var map4 = false;
 let gameEnd = false;
+var pauseGame = false;
 
 const tingSound = new Audio('ting.mp3');
 const overSound = new Audio('gameover.wav');
@@ -149,13 +150,13 @@ getMode();
 
 //Chức năng tối_sáng
 function darkMode() {
-    colorMode = "#100108";
+    colorMode = 'black';
     setMode();
     document.querySelector('#dark').classList.add('click');
     document.querySelector('#light').classList.remove('click');
 }
 function lightMode() {
-    colorMode = "#250707";
+    colorMode = '#250707';
     setMode();
     document.querySelector('#dark').classList.remove('click');
     document.querySelector('#light').classList.add('click');
@@ -411,7 +412,10 @@ function drawGame() {
         ctx.font = '20px verdana';
         ctx.fillText('Press Arrow key to play!', canvas.clientWidth/4.5, canvas.clientHeight/2 + 30);
     }
-    myVar = setTimeout(drawGame,1000/speed);
+    if (pauseGame == false) {
+        myVar = setTimeout(drawGame,1000/speed);
+    }
+    
 
 }
 // map 2
@@ -484,8 +488,8 @@ function clearScreen() {
  // Vẽ rắn
 function drawSnake() {
     ctx.shadowBlur = 20;
-    ctx.shadowColor = "white";
-    ctx.fillStyle = 'green';
+    ctx.shadowColor = `rgb(${Math.random()* 255},${Math.random()* 255},${Math.random()* 255})`;
+    ctx.fillStyle = `rgb(${Math.random()* 255},${Math.random()* 255},${Math.random()* 255})`;
     for (let i = 0; i < snakeParts.length; i++) {
         let part = snakeParts[i];
         ctx.fillRect(part.x * titleCount, part.y * titleCount, titleSize, titleSize);
@@ -495,14 +499,14 @@ function drawSnake() {
         snakeParts.shift();
     }
     ctx.shadowBlur = 20;
-    ctx.shadowColor = "white";
-    ctx.fillStyle = 'orange';
+    ctx.shadowColor = 'red';
+    ctx.fillStyle = '#5fe207';
     // ctx.fillRect(headX * titleCount, headY * titleCount, titleSize, titleSize);
     ctx.arc((headX + 0.4) * titleCount, (headY + 0.4)* titleCount,11, 0, 2 * Math.PI);
     ctx.fill();
     ctx.closePath();
     ctx.beginPath();
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = `rgb(${Math.random()* 255},${Math.random()* 255},${Math.random()* 255})`;
     if (xvelocity <0 && yvelocity == 0) {
         ctx.arc((headX + 0.3) * titleCount, (headY + 0.6)* titleCount,2, 0, 2 * Math.PI);
         ctx.arc((headX + 0.3) * titleCount, (headY + 0.2)* titleCount,2, 0, 2 * Math.PI);
@@ -519,13 +523,16 @@ function drawSnake() {
     ctx.fill();
 }
 // Vẽ thức ăn
+var colorFood = 'red';
 function drawFood() {
-    ctx.fillStyle = 'red';
+    ctx.shadowColor = `rgb(${Math.random()* 255},${Math.random()* 255},${Math.random()* 255})`;
+    ctx.fillStyle = colorFood;
     ctx.fillRect(xFood * titleCount, yFood * titleCount, titleSize, titleSize);
 }
 // Kiểm tra vị trí sinh ra thức ăn mới
 function checkCollision() {
     if (xFood == headX && yFood == headY) {
+        colorFood = `rgb(${Math.random()* 253 +1},${Math.random()* 253 +1},${Math.random()* 255})`;
         tailLength++;
         tingSound.play();
         score++;
@@ -535,7 +542,7 @@ function checkCollision() {
         xFood = Math.floor(Math.random() * sizeBoard);
         yFood = Math.floor(Math.random() * sizeBoard);
 
-        for (let i = 0; i < wall.length ; i++) {
+        for (let i = 0; i < wall2.length ; i++) {
             let part = wall2[i];
             if (xFood == part.x && yFood == part.y) {
                 xFood ++;
@@ -737,6 +744,19 @@ function changeSnakePosition() {
              headY = 0;
          }
     }
+}
+function pause() {
+    pauseGame = true;
+    music.pause();
+    document.getElementById('pause').classList.add('click');
+    document.getElementById('playAgain').classList.remove('click');
+}
+function playAgain() {
+    pauseGame = false;
+    document.getElementById('pause').classList.remove('click');
+    document.getElementById('playAgain').classList.add('click');
+    drawGame();
+    music.play();
 }
 
 drawGame();
