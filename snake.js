@@ -20,6 +20,7 @@ var map3 = false;
 var map4 = false;
 let gameEnd = false;
 var pauseGame = false;
+let checkSpace = false;
 
 const tingSound = new Audio('ting.mp3');
 const overSound = new Audio('gameover.wav');
@@ -411,7 +412,8 @@ function drawGame() {
         ctx.fillStyle = '#f9e5ad';
         ctx.font = '20px verdana';
         ctx.fillText('Press Arrow key to play!', canvas.clientWidth/4.5, canvas.clientHeight/2 + 30);
-    }
+    } 
+
     if (pauseGame == false) {
         myVar = setTimeout(drawGame,1000/speed);
     }
@@ -545,8 +547,8 @@ function checkCollision() {
         for (let i = 0; i < wall2.length ; i++) {
             let part = wall2[i];
             if (xFood == part.x && yFood == part.y) {
-                xFood ++;
-                yFood ++;
+                xFood = xFood +1;
+                yFood = yFood +1;
                 break;
             }
         }
@@ -614,6 +616,7 @@ function isGameOver() {
     }
     if (gameOver) {
         music.currentTime = 0;
+        checkSpace = true;
         music.pause();
         overSound.play();
         getMode();
@@ -649,6 +652,9 @@ function isGameOver() {
 document.body.addEventListener('keydown',keyDown);
 document.onkeydown = function(e) {
     if (e.which == 32) { 
+        if (checkSpace == false) {
+            return;
+        }
         music.pause();
         music.currentTime = 0;
         headX = 10;
@@ -672,6 +678,7 @@ document.onkeydown = function(e) {
         snakeParts = [];
         gameEnd = false;
         getMode();
+        checkSpace = false;
         document.querySelector('#gameSnake').classList.remove('gameOver');
         clearTimeout(myVar);
         drawGame();
@@ -748,13 +755,24 @@ function changeSnakePosition() {
     }
 }
 function pause() {
+    if (xvelocity == 0 && yvelocity == 0) {
+        return;
+    }
+    document.getElementById('playAgain').disabled = false;
+    document.getElementById('playAgain').classList.remove('unPress');
     pauseGame = true;
     music.pause();
     document.getElementById('pause').classList.add('click');
     document.getElementById('playAgain').classList.remove('click');
+    document.getElementById('pause').classList.add('unPress');
+    document.getElementById('pause').disabled = true;
 }
 function playAgain() {
     pauseGame = false;
+    document.getElementById('playAgain').classList.add('unPress');
+    document.getElementById('playAgain').disabled = true;
+    document.getElementById('pause').disabled = false;
+    document.getElementById('pause').classList.remove('unPress');
     document.getElementById('pause').classList.remove('click');
     document.getElementById('playAgain').classList.add('click');
     drawGame();
