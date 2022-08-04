@@ -649,6 +649,8 @@ function isGameOver() {
 document.body.addEventListener('keydown',keyDown);
 document.onkeydown = function(e) {
     if (e.which == 32) { 
+        music.pause();
+        music.currentTime = 0;
         headX = 10;
         headY = 10;
         xvelocity = 0;
