@@ -23,7 +23,7 @@ canvas {
     background-image:url(photo.jpg);
 }
 
-/* Bảng menu */
+/* Bảng setting */
 .containTable {
     position:relative;
 }
@@ -87,7 +87,10 @@ text-align: center;
     color: #f9e5ad;
     font-size: large;
 }
-/* manu */
+.btnControl {
+    text-align: center;
+}
+/* menu */
 .containTable2 {
     position: absolute;
     width: 350px;
