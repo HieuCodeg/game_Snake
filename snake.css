@@ -1,9 +1,12 @@
 /* Canvas */
+* {
+    padding: 0;
+    margin: 0;
+}
 canvas {
     position: relative;
     box-shadow: #100108 20px 20px 40px;
-    margin-top: 15vh;
-    margin-left: 32vw;
+    margin: auto;
 }
 
 .gameOver {
@@ -19,9 +22,11 @@ canvas {
 }
 .header {
     width: 100%;
-    height: 97vh;
+    height: 100vh;
     background-image:url(photo.jpg);
+    display: flex;
 }
+
 
 /* Bảng setting */
 .containTable {
@@ -40,6 +45,9 @@ button + button {
     border: 2px solid #821f02;
     left: 3vw;
     top: 18vh;
+}
+#tabble1-tr1 {
+    text-align: center;
 }
 .table1-th {
 height: 35px;
@@ -138,4 +146,159 @@ input {
 .btnMenu {
     border:1px solid #f9e5ad;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    display: none;
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal__body {
+    background-color: #fffffe;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+}
+.close {
+    background-color: transparent;
+    border: none;
+    font-size:x-large;
+    width: 10px;
+    margin-top: -25px;
+}
+.close:hover {
+    background-color: transparent;
+    opacity: 0.6;
+}
+.colorBoard {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+}
+.colorBoard__contten {
+    width: 520px;
+    height: 450px;
+    overflow: hidden overlay;
+    overscroll-behavior: contain;
+    will-change: scroll-position;   
+    position: relative; 
+}
+
+.colorBoard__contten::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+  
+.colorBoard__contten::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+  
+.colorBoard__contten::-webkit-scrollbar-thumb {
+    background-color: #7200a1;
+    border-radius: 4px;
+}
+.colorBoard__header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.colorBoard__body__name {
+    margin-bottom: 10px;
+}
+.colorBoard__body__item {
+    margin: 0 12px 15px 12px;
+}
+
+.colorBoard__body__item__board {
+    width: 100px;
+    height: 80px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.overlayColor {
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.5;
+    display:none;
+}
+.colorBoard__body__item__board:hover .overlayColor {
+    display: block;
+}
+.colorBoard__body__item__board:hover .btn {
+    display: block;
+}
+
+.btn {
+    color: white;
+    font-size:x-small;
+    border-color: white;
+    margin: 13px auto 0px auto;
+    height: 20px;
+    width: 80%;
+    padding: 0px;
+    display: none;
+    z-index: 1;
+
+}
+.btnApply {
+    background-color: #7200a1;
+    border: 1px solid #7200a1;
+}
+.btnPreview {
+    background-color: rgba(0, 0, 0, 0.3) ;
+    border: 1px solid white;
+}
+
+.colorBoard__body__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.blackBoard {
+    background-image: linear-gradient(to right,#757070,#292929);
+}
+.brownBoard {
+    background-image: linear-gradient(to right,#615050,#250707);
+}
+.blueBoard {
+    background-image: linear-gradient(to right,#83bce6,#2874a4);
+}
+.violetBoard {
+    background-image: linear-gradient(to right,#69469f,#482082);
+}
+.greenBoard {
+    background-image: linear-gradient(to right,#32836f,#175a49);
+}
+.redBoard {
+    background-image: linear-gradient(to right,#b8595e,#902d32);
+}
+.whiteBoard {
+    background-image: linear-gradient(to right,#f1f1f1,#f1f1f1);
+}
+.cloudBoard {
+    background-image: linear-gradient(to right,#eae6dd,#eae6dd);
+}
+.blueLightBoard {
+    background-image: linear-gradient(to right,#d0e4e3,#bcd3d2);
+}
+.orangeBoard {
+    background-image: linear-gradient(to right,#f1ac77,#f68630);
+}
+.purpleLightBoard {
+    background-image: linear-gradient(to right,#f4ddd7,#f4ddd7);
 }

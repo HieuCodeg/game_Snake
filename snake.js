@@ -81,13 +81,6 @@ function getMode() {
     map3 = mapMode[1];
     map4 = mapMode[2];
     
-    if (colorMode == '#250707') {
-        document.querySelector('#dark').classList.remove('click');
-        document.querySelector('#light').classList.add('click');
-    } else {
-        document.querySelector('#dark').classList.add('click');
-        document.querySelector('#light').classList.remove('click');
-    }
     if (playMode) {
         document.querySelector('#boxMode').classList.add('click');
         document.querySelector('#gameSnake').classList.add('bold');
@@ -149,19 +142,33 @@ getMode();
 
 // Chế độ cài đặt
 
-//Chức năng tối_sáng
-function darkMode() {
-    colorMode = 'black';
-    setMode();
-    document.querySelector('#dark').classList.add('click');
-    document.querySelector('#light').classList.remove('click');
+//Chức năng chọn màu
+function showColorBoard() {
+    document.querySelector('#btnColor').classList.add('click');
+    document.querySelector('.modal').style.display = 'block';
+    document.querySelector('.modal').style.display = 'flex';
 }
-function lightMode() {
-    colorMode = '#250707';
-    setMode();
-    document.querySelector('#dark').classList.remove('click');
-    document.querySelector('#light').classList.add('click');
+function closeBoard() {
+    document.querySelector('.modal').style.display = 'none';
+    document.querySelector('.modal__inner').style.backgroundColor = '#fffffe';
+    document.querySelector('.colorBoard').style.color = '#333';
+    document.querySelector('.close').style.color = '#333';
 }
+function applyColor(color) {
+    colorMode = color;
+    setMode();
+}
+function previewColor(color,index) {
+    document.querySelector('.modal__inner').style.backgroundColor = `${color}`;
+    if (index == 1) {
+        document.querySelector('.colorBoard').style.color = 'white';
+        document.querySelector('.close').style.color = 'white';
+    } else {
+        document.querySelector('.colorBoard').style.color = '#333';
+        document.querySelector('.close').style.color = '#333';
+    }   
+}
+
 // Chức năng có viền_tràn viền
 function playMode1() {
     playMode = true;

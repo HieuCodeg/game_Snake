@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hieu Nguyen</title>
+    <link rel="stylesheet" href="fontawesome-free-6.1.2-web/css/all.min.css">
     <link rel="stylesheet" href="snake.css">
 </head>
 <body>
@@ -18,9 +19,8 @@
                     </tr>
                     <tr class="table1-tr">
                         <td class="nameTag">Chế độ</td>
-                        <td>
-                            <button id="dark"   onclick="darkMode()">Nền đen</button>
-                            <button id="light" class='click' onclick="lightMode()">Nền nâu</button>
+                        <td id="tabble1-tr1">
+                            <button id="btnColor"   onclick="showColorBoard()">Màu nền</button>
                         </td>
                     </tr>
                     <tr class="table1-tr">
@@ -62,6 +62,133 @@
         </div>
         <div class="containTable2"></div>
         <canvas id="gameSnake" width="500" height="500"></canvas>
+    </div>
+    <div class="modal">
+        <div class="overlay"></div>
+        
+        <div class="modal__body">
+            <div class="modal__inner">
+                <!-- thẻ mode màu -->
+                <div class="colorBoard">
+                    <div class="colorBoard__header">
+                        <h2>Giao diện</h2>
+                        <button class="close" onclick="closeBoard()" >
+                            <i class="fa-solid fa-x" ></i>
+                        </button>
+                    </div>
+                    <!-- Màu tối -->
+                    <div class="colorBoard__contten">
+                        <div class="colorBoard__body">
+                            <div class="colorBoard__body__name">
+                                <h3>Màu tối</h3>
+                            </div>
+                            <div class="colorBoard__body__list">
+                                <div class="colorBoard__body__item">
+                                    
+                                    <div class="colorBoard__body__item__board blackBoard">
+                                        <div class="overlayColor"></div> 
+                                        <button onclick="applyColor('#292929')" class="btn btnApply">Áp dụng</button>
+                                        <button class="btn btnPreview" onclick="previewColor('#292929',1)">Xem thử</button>
+                                    </div>
+                                    <div class="colorBoard__body__item__name">Tối</div>
+                                </div>
+                                <div class="colorBoard__body__item">
+                                    <div class="colorBoard__body__item__board brownBoard">
+                                        <div class="overlayColor"></div> 
+                                        <button onclick="applyColor('#250707')" class="btn btnApply">Áp dụng</button>
+                                        <button class="btn btnPreview" onclick="previewColor('#250707',1)">Xem thử</button>
+                                    </div>
+                                    <div class="colorBoard__body__item__name">Nâu</div>
+                                </div>
+                                <div class="colorBoard__body__item">
+                                    <div class="colorBoard__body__item__board blueBoard">
+                                        <div class="overlayColor"></div> 
+                                        <button onclick="applyColor('#2874a4')" class="btn btnApply">Áp dụng</button>
+                                        <button class="btn btnPreview" onclick="previewColor('#2874a4',1)">Xem thử</button>
+                                    </div>
+                                    <div class="colorBoard__body__item__name">Xanh biển</div>
+                                </div>
+                                <div class="colorBoard__body__item">
+                                    <div class="colorBoard__body__item__board violetBoard">
+                                        <div class="overlayColor"></div> 
+                                        <button onclick="applyColor('#482082')" class="btn btnApply">Áp dụng</button>
+                                        <button class="btn btnPreview" onclick="previewColor('#482082',1)">Xem thử</button>
+                                    </div>
+                                    <div class="colorBoard__body__item__name">Tím</div>
+                                </div>
+                                <div class="colorBoard__body__item">
+                                    <div class="colorBoard__body__item__board greenBoard">
+                                        <div class="overlayColor"></div> 
+                                        <button onclick="applyColor('#175a49')" class="btn btnApply">Áp dụng</button>
+                                        <button class="btn btnPreview" onclick="previewColor('#175a49',1)">Xem thử</button>
+                                    </div>
+                                    <div class="colorBoard__body__item__name">Xanh lá</div>
+                                </div>
+                                <div class="colorBoard__body__item">
+                                    <div class="colorBoard__body__item__board redBoard">
+                                        <div class="overlayColor"></div> 
+                                        <button  onclick="applyColor('#902d32')"class="btn  btnApply">Áp dụng</button>
+                                        <button class="btn btnPreview" onclick="previewColor('#902d32',1)">Xem thử</button>
+                                    </div>
+                                    <div class="colorBoard__body__item__name">Đỏ</div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Màu sáng -->
+                        <div class="colorBoard__body">
+                            <div class="colorBoard__body__name">
+                                <h3>Màu sáng</h3>
+                            </div>
+                            <div class="colorBoard__body__list">
+                                <div class="colorBoard__body__item">
+                                    <div class="colorBoard__body__item__board whiteBoard">
+                                        <div class="overlayColor"></div> 
+                                        <button onclick="applyColor('#f1f1f1')" class="btn btnApply">Áp dụng</button>
+                                        <button class="btn btnPreview" onclick="previewColor('#f1f1f1',0)">Xem thử</button>
+                                    </div>
+                                    <div class="colorBoard__body__item__name">Sáng</div>
+                                </div>
+                                <div class="colorBoard__body__item">
+                                    <div class="colorBoard__body__item__board cloudBoard">
+                                        <div class="overlayColor"></div> 
+                                        <button onclick="applyColor('#eae6dd')" class="btn btnApply">Áp dụng</button>
+                                        <button class="btn  btnPreview" onclick="previewColor('#eae6dd',0)">Xem thử</button>
+                                    </div>
+                                    <div class="colorBoard__body__item__name">Sáng nhẹ</div>
+                                </div>
+                                <div class="colorBoard__body__item"> 
+                                    <div class="colorBoard__body__item__board blueLightBoard">
+                                        <div class="overlayColor"></div>                          
+                                        <button onclick="applyColor('#bcd3d2')" class="btn btnApply">Áp dụng</button>
+                                        <button class="btn  btnPreview" onclick="previewColor('#bcd3d2',0)">Xem thử</button>
+                                    </div>
+                                    <div class="colorBoard__body__item__name">Xanh nhạt</div>
+                                </div>
+                                <div class="colorBoard__body__item">
+                                    <div class="colorBoard__body__item__board orangeBoard">
+                                        <div class="overlayColor"></div> 
+                                        <button  onclick="applyColor('#f68630')"class="btn  btnApply">Áp dụng</button>
+                                        <button class="btn  btnPreview" onclick="previewColor('#f68630',0)">Xem thử</button>
+                                    </div>
+                                    <div class="colorBoard__body__item__name">Cam nhạt</div>
+                                </div>
+                                <div class="colorBoard__body__item">
+                                    <div class="colorBoard__body__item__board purpleLightBoard">
+                                        <div class="overlayColor"></div> 
+                                        <button  onclick="applyColor('#f4ddd7')"class="btn  btnApply">Áp dụng</button>
+                                        <button class="btn  btnPreview" onclick="previewColor('#f4ddd7',0)">Xem thử</button>
+                                    </div>
+                                    <div class="colorBoard__body__item__name">Hồng nhạt</div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="snake.js"></script>
 </body>
