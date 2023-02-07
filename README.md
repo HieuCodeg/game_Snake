@@ -5,10 +5,10 @@
 Here is my first project which is witten by all 💖
 
 ## Technology
-Project is created with:
-[![html](https://skillicons.dev/icons?i=gitlab)](https://gitlab.com/users/s2minhhieu)
-[![css](https://skillicons.dev/icons?i=gitlab)](https://gitlab.com/users/s2minhhieu)
-[![js](https://skillicons.dev/icons?i=gitlab)](https://gitlab.com/users/s2minhhieu)
+Project is created with:<br/>
+[![html](https://skillicons.dev/icons?i=html)]
+[![css](https://skillicons.dev/icons?i=css)]
+[![js](https://skillicons.dev/icons?i=js)]
 
 ## How to play this game
 
