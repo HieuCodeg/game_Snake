@@ -12,11 +12,11 @@ Project is created with:
 
 ## How to play this game
 
--   **Please click this Link:** <a href="https://hieucodeg.github.io/game_Snake/">https://hieucodeg.github.io/game_Snake/</a>
+-   **Please click this Link:** <a target="_blank" href="https://hieucodeg.github.io/game_Snake/">https://hieucodeg.github.io/game_Snake/</a>
 
 <p align="center">
   <img src="demo/gameSnack1.gif" width=600><br/>
-  <i>Main menu, Level 1 </i>
+  <i>Main menu </i>
 </p>
 <p align="center">
   <img src="demo/gameSnack2.gif" width=600><br/>
