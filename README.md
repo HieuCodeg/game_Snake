@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Here is my first project which is witten by all 💖
+Here is my first project which is written by all 💖
 
 ## Technology
 Project is created with:<br/>
